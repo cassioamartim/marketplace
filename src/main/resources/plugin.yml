@@ -1,0 +1,4 @@
+name: MarketPlace
+author: Cássio Martim
+version: 1.0.0
+main: dev.martim.marketplace.MarketPlace
