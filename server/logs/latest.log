@@ -1,172 +1,92 @@
-[21:43:31] [ServerMain/WARN]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[21:43:37] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[21:43:39] [ServerMain/INFO]: Loaded 7 recipes
-[21:43:40] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[21:43:40] [Server thread/INFO]: Loading properties
-[21:43:40] [Server thread/INFO]: This server is running CraftBukkit version 4090-Spigot-b754dcc-38b1f49 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT)
-[21:43:40] [Server thread/INFO]: Debug logging is disabled
-[21:43:40] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:43:40] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:43:40] [Server thread/INFO]: Default game type: SURVIVAL
-[21:43:40] [Server thread/INFO]: Generating keypair
-[21:43:41] [Server thread/INFO]: Starting Minecraft server on *:25565
-[21:43:41] [Server thread/INFO]: Using default channel type
-[21:43:41] [Server thread/WARN]: Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
-[21:43:44] [Server thread/WARN]: Legacy plugin MarketPlace v1.0.0 does not specify an api-version.
-[21:43:44] [Server thread/INFO]: [MarketPlace] Loading MarketPlace v1.0.0
-[21:43:44] [Server thread/INFO]: [MarketPlace] [MongoDB] Starting MongoDB...
-[21:43:44] [Server thread/INFO]: MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "5.1.0"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.11+7-LTS-207"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5dcea3c8, com.mongodb.Jep395RecordCodecProvider@269b10a3, com.mongodb.KotlinCodecProvider@7cac5c42]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
-[21:43:44] [Server thread/INFO]: [MarketPlace] [MongoDB] Connection to MongoDB successful. (Average time: 339ms)
-[21:43:44] [cluster-ClusterId{value='66eb73c076966d0ffb1ebea6', description='null'}-127.0.0.1:27017/INFO]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=47435900}
-[21:43:44] [Server thread/INFO]: Preparing level "world"
-[21:43:44] [Server thread/INFO]: -------- World Settings For [world] --------
-[21:43:44] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[21:43:44] [Server thread/INFO]: Item Merge Radius: 2.5
-[21:43:44] [Server thread/INFO]: Item Despawn Rate: 6000
-[21:43:44] [Server thread/INFO]: View Distance: 10
-[21:43:44] [Server thread/INFO]: Simulation Distance: 10
-[21:43:44] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[21:43:44] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[21:43:44] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[21:43:44] [Server thread/INFO]: Experience Merge Radius: 3.0
-[21:43:44] [Server thread/INFO]: Mob Spawn Range: 6
-[21:43:44] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Cane Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Melon Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Potato Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Vine Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[21:43:44] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[21:43:44] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[21:43:44] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[21:43:44] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[21:43:44] [Server thread/INFO]: Max TNT Explosions: 100
-[21:43:44] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[21:43:45] [Server thread/INFO]: -------- World Settings For [world_nether] --------
-[21:43:45] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[21:43:45] [Server thread/INFO]: Item Merge Radius: 2.5
-[21:43:45] [Server thread/INFO]: Item Despawn Rate: 6000
-[21:43:45] [Server thread/INFO]: View Distance: 10
-[21:43:45] [Server thread/INFO]: Simulation Distance: 10
-[21:43:45] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[21:43:45] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[21:43:45] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[21:43:45] [Server thread/INFO]: Experience Merge Radius: 3.0
-[21:43:45] [Server thread/INFO]: Mob Spawn Range: 6
-[21:43:45] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Cane Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Melon Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Potato Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Vine Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[21:43:45] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[21:43:45] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[21:43:45] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[21:43:45] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[21:43:45] [Server thread/INFO]: Max TNT Explosions: 100
-[21:43:45] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[21:43:47] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
-[21:43:47] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[21:43:47] [Server thread/INFO]: Item Merge Radius: 2.5
-[21:43:47] [Server thread/INFO]: Item Despawn Rate: 6000
-[21:43:47] [Server thread/INFO]: View Distance: 10
-[21:43:47] [Server thread/INFO]: Simulation Distance: 10
-[21:43:47] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[21:43:47] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[21:43:47] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[21:43:47] [Server thread/INFO]: Experience Merge Radius: 3.0
-[21:43:47] [Server thread/INFO]: Mob Spawn Range: 6
-[21:43:47] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Cane Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Melon Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Potato Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Vine Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[21:43:47] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[21:43:47] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[21:43:47] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[21:43:47] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[21:43:47] [Server thread/INFO]: Max TNT Explosions: 100
-[21:43:47] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[21:43:47] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[21:43:50] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:50] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[21:43:51] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:51] [Worker-Main-1/INFO]: Preparing spawn area: 3%
-[21:43:52] [Worker-Main-2/INFO]: Preparing spawn area: 8%
-[21:43:52] [Server thread/INFO]: Time elapsed: 4847 ms
-[21:43:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[21:43:53] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:53] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:54] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[21:43:54] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:54] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:55] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:55] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:56] [Worker-Main-1/INFO]: Preparing spawn area: 1%
-[21:43:56] [Worker-Main-2/INFO]: Preparing spawn area: 7%
-[21:43:57] [Server thread/INFO]: Time elapsed: 4403 ms
-[21:43:57] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[21:43:58] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:58] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:58] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:58] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:43:59] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:43:59] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:44:00] [Server thread/INFO]: Time elapsed: 2912 ms
-[21:44:00] [Server thread/INFO]: [MarketPlace] Enabling MarketPlace v1.0.0
-[21:44:00] [Server thread/INFO]: [MarketPlace] Plugin started successfully!
-[21:44:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:44:00] [Server thread/INFO]: Done (15.280s)! For help, type "help"
-[21:44:09] [User Authenticator #1/INFO]: UUID of player CassioMartim is 0300ef8b-2dbc-4dc7-bf34-e37b70a04fde
-[21:44:10] [Server thread/INFO]: CassioMartim joined the game
-[21:44:10] [Server thread/INFO]: CassioMartim[/127.0.0.1:64844] logged in with entity id 239 at ([world]-16.642993312514623, 63.0, 16.653515466113113)
-[21:44:13] [Server thread/INFO]: CassioMartim issued server command: /test
-[21:45:55] [Server thread/INFO]: CassioMartim issued server command: /help
-[21:46:02] [Server thread/INFO]: CassioMartim issued server command: /help Marketplace
-[21:46:04] [Server thread/INFO]: CassioMartim issued server command: /help plugins
-[21:46:11] [Server thread/INFO]: CassioMartim issued server command: /help test
+[00:43:33] [ServerMain/WARN]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[00:43:38] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[00:43:39] [ServerMain/INFO]: Loaded 7 recipes
+[00:43:41] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[00:43:41] [Server thread/INFO]: Loading properties
+[00:43:41] [Server thread/INFO]: This server is running CraftBukkit version 4090-Spigot-b754dcc-38b1f49 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT)
+[00:43:42] [Server thread/INFO]: Debug logging is disabled
+[00:43:42] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[00:43:42] [Server thread/INFO]: Using 4 threads for Netty based IO
+[00:43:42] [Server thread/INFO]: Default game type: SURVIVAL
+[00:43:42] [Server thread/INFO]: Generating keypair
+[00:43:42] [Server thread/INFO]: Starting Minecraft server on *:25565
+[00:43:42] [Server thread/INFO]: Using default channel type
+[00:43:42] [Server thread/WARN]: Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[00:43:45] [Server thread/WARN]: Legacy plugin MarketPlace v1.0.0 does not specify an api-version.
+[00:43:45] [Server thread/INFO]: [MarketPlace] Loading MarketPlace v1.0.0
+[00:43:45] [Server thread/INFO]: [MarketPlace] [MongoDB] Starting MongoDB...
+[00:43:46] [Server thread/INFO]: MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "5.1.0"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.11+7-LTS-207"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@2e262a36, com.mongodb.Jep395RecordCodecProvider@7496e937, com.mongodb.KotlinCodecProvider@16baf916]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+[00:43:46] [Server thread/INFO]: [MarketPlace] [MongoDB] Connection to MongoDB successful. (Average time: 710ms)
+[00:43:46] [cluster-ClusterId{value='66ecef72a40e0379aa0fa479', description='null'}-127.0.0.1:27017/INFO]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=175408200}
+[00:43:46] [Server thread/INFO]: Waiting for server to become available for operation with ID 2. Remaining time: 30000 ms. Selector: WritableServerSelector, topology description: {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}].
+[00:43:46] [Server thread/INFO]: Preparing level "world"
+[00:43:46] [Server thread/INFO]: -------- World Settings For [world] --------
+[00:43:46] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[00:43:46] [Server thread/INFO]: Simulation Distance: 10
+[00:43:46] [Server thread/INFO]: View Distance: 10
+[00:43:46] [Server thread/INFO]: Item Merge Radius: 2.5
+[00:43:46] [Server thread/INFO]: Item Despawn Rate: 6000
+[00:43:46] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[00:43:46] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[00:43:46] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[00:43:46] [Server thread/INFO]: Experience Merge Radius: 3.0
+[00:43:46] [Server thread/INFO]: Mob Spawn Range: 6
+[00:43:46] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Cane Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Melon Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Potato Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Vine Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[00:43:46] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[00:43:46] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[00:43:46] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[00:43:46] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[00:43:46] [Server thread/INFO]: Max TNT Explosions: 100
+[00:43:46] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[00:43:47] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:52] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[00:43:53] [Worker-Main-2/INFO]: Preparing spawn area: 7%
+[00:43:53] [Server thread/INFO]: Time elapsed: 6636 ms
+[00:43:54] [Server thread/INFO]: [MarketPlace] Enabling MarketPlace v1.0.0
+[00:43:54] [Server thread/INFO]: [MarketPlace] Registering commands...
+[00:43:54] [Server thread/INFO]: [MarketPlace] Command registration completed. (Total commands recorded: 5 in -7ms)
+[00:43:54] [Server thread/INFO]: [MarketPlace] Registering events...
+[00:43:54] [Server thread/INFO]: [MarketPlace] Event registration completed. (Total events recorded: 11 in -15ms)
+[00:43:54] [Server thread/INFO]: [MarketPlace] Plugin started successfully!
+[00:43:54] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[00:43:54] [Server thread/INFO]: Done (7.324s)! For help, type "help"
+[00:44:00] [User Authenticator #1/INFO]: [MarketPlace] Account CassioMartim logged in server.
+[00:44:00] [User Authenticator #1/INFO]: UUID of player CassioMartim is 0300ef8b-2dbc-4dc7-bf34-e37b70a04fde
+[00:44:00] [Server thread/INFO]: CassioMartim joined the game
+[00:44:01] [Server thread/INFO]: CassioMartim[/127.0.0.1:50200] logged in with entity id 216 at ([world]-162.63021912988367, 64.0, 80.72863783512331)
+[00:44:06] [Server thread/INFO]: CassioMartim issued server command: /setcoins
+[00:44:09] [Server thread/INFO]: CassioMartim issued server command: /setcoins CassioMartim 10
+[00:44:12] [Server thread/INFO]: CassioMartim issued server command: /marketplace
+[00:44:16] [Server thread/INFO]: CassioMartim issued server command: /marketplace
+[00:44:19] [Server thread/INFO]: CassioMartim issued server command: /transactions
+[00:52:02] [Thread-1/INFO]: Stopping server
+[00:52:02] [Thread-1/INFO]: [MarketPlace] Disabling MarketPlace v1.0.0

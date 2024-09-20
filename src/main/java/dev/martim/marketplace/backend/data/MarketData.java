@@ -3,7 +3,7 @@ package dev.martim.marketplace.backend.data;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import dev.martim.marketplace.backend.database.mongodb.MongoDatabase;
-import dev.martim.marketplace.item.MarketItem;
+import dev.martim.marketplace.market.items.MarketItem;
 import dev.martim.marketplace.manager.Manager;
 import org.bson.Document;
 

@@ -182,7 +182,7 @@ public abstract class Menu {
     public void addBorderPage() {
         // Adicionar botão de página anterior.
         if (pageNumber > 1) {
-            addItem(getTotalSlots() - 6, Item.of(Material.ARROW, "§cPágina " + (pageNumber - 1))
+            addItem(getTotalSlots() - 6, Item.of(Material.ARROW, "§ePage " + (pageNumber - 1))
                     .click(event -> {
                         setPageNumber(pageNumber - 1);
 
@@ -196,7 +196,7 @@ public abstract class Menu {
 
         // Adicionar botão de próxima página.
         if (pageNumber < totalPages) {
-            addItem(getTotalSlots() - 4, Item.of(Material.ARROW, "§aPágina " + (pageNumber + 1))
+            addItem(getTotalSlots() - 4, Item.of(Material.ARROW, "§aPage " + (pageNumber + 1))
                     .click(event -> {
                         setPageNumber(pageNumber + 1);
 
@@ -227,7 +227,7 @@ public abstract class Menu {
     }
 
     public void addBackButton(int slot) {
-        addItem(slot, Item.of(Material.ARROW, "§aVoltar", last != null ? "§7Para " + last.getInitialTitle() : "")
+        addItem(slot, Item.of(Material.ARROW, "§aBack", last != null ? "§7to " + last.getInitialTitle() : "")
                 .click(event -> {
                     if (last == null) {
                         sound(MenuSound.ERROR);

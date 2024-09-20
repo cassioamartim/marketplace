@@ -1,4 +1,4 @@
-package br.com.spark.core.util.list;
+package dev.martim.marketplace.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +18,7 @@ public class DateUtil {
                 .format(new Date(millis));
 
         if (withHoursAndMinutes) {
-            date = date.replace("-", "às");
+            date = date.replace("-", "the");
         }
 
         return date;
@@ -43,27 +43,27 @@ public class DateUtil {
         long days = hours / 24;
         long years = days / 365;
 
-        seconds %= 60; // Restante dos segundos após subtrair os minutos completos
-        minutes %= 60; // Restante dos minutos após subtrair as horas completas
-        hours %= 24; // Restante das horas após subtrair os dias completos
-        days %= 365; // Restante dos dias após subtrair os anos completos
+        seconds %= 60;
+        minutes %= 60;
+        hours %= 24;
+        days %= 365;
 
         StringBuilder result = new StringBuilder();
 
         if (years > 0)
-            result.append(years).append(big ? "anos" : "a");
+            result.append(years).append(big ? "years" : "a");
 
         if (days > 0)
-            result.append(years > 0 ? " " : "").append(days).append(big ? "dias" : "d");
+            result.append(years > 0 ? " " : "").append(days).append(big ? "days" : "d");
 
         if (hours > 0)
-            result.append(days > 0 ? " " : "").append(hours).append(big ? "horas" : "h");
+            result.append(days > 0 ? " " : "").append(hours).append(big ? "hours" : "h");
 
         if (minutes > 0)
-            result.append(hours > 0 ? " " : "").append(minutes).append(big ? "minutos" : "m");
+            result.append(hours > 0 ? " " : "").append(minutes).append(big ? "minutes" : "m");
 
         if (seconds > 0)
-            result.append((hours > 0 || minutes > 0) ? " " : "").append(seconds).append(big ? "segundos" : "s");
+            result.append((hours > 0 || minutes > 0) ? " " : "").append(seconds).append(big ? "seconds" : "s");
 
         return result.toString();
     }

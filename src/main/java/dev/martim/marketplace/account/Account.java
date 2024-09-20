@@ -1,12 +1,12 @@
 package dev.martim.marketplace.account;
 
 import dev.martim.marketplace.account.data.AccountData;
-import dev.martim.marketplace.item.MarketItem;
-import dev.martim.marketplace.item.transaction.TransactionItem;
+import dev.martim.marketplace.market.MarketType;
+import dev.martim.marketplace.market.items.MarketItem;
+import dev.martim.marketplace.market.items.TransactionItem;
 import dev.martim.marketplace.manager.Manager;
 import lombok.Getter;
 
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -41,9 +41,26 @@ public class Account {
         return data.getHistory();
     }
 
-    public void buy(MarketItem item, TransactionItem.TransactionType type) {
-        getHistory().add(new TransactionItem(item.getAuthor(), type));
+    public void buy(MarketItem item, MarketType market) {
+        getHistory().add(new TransactionItem(item, market));
         saveData(data);
     }
 
+    /* Coins */
+    public int getCoins() {
+        return data.getCoins();
+    }
+
+    public void setCoins(int coins) {
+        data.setCoins(coins);
+        saveData(data);
+    }
+
+    public void addCoins(int coins) {
+        setCoins(getCoins() + coins);
+    }
+
+    public void removeCoins(int coins) {
+        setCoins(getCoins() - coins);
+    }
 }

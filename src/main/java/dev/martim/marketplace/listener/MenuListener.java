@@ -18,9 +18,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Map;
-import java.util.UUID;
-
 public class MenuListener implements Listener {
 
     private final MenuController controller;
@@ -46,15 +43,14 @@ public class MenuListener implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onPlayerClickItem(InventoryClickEvent event) {
-        if (event.getWhoClicked() instanceof Player) {
-            Player player = (Player) event.getWhoClicked();
-
-            if (event.getClickedInventory() == null || event.getCurrentItem() == null) {
-                event.setCancelled(true);
-                return;
-            }
+        if (event.getWhoClicked() instanceof Player player) {
 
             if (controller.contains(player)) {
+                if (event.getClickedInventory() == null || event.getCurrentItem() == null) {
+                    event.setCancelled(true);
+                    return;
+                }
+
                 org.bukkit.inventory.Inventory clicked = event.getClickedInventory();
 
                 if (clicked.equals(player.getInventory())) {

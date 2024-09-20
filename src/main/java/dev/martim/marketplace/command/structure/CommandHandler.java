@@ -1,6 +1,5 @@
-package dev.martim.marketplace.command.handler;
+package dev.martim.marketplace.command.structure;
 
-import dev.martim.marketplace.command.builder.CommandBuilder;
 import dev.martim.marketplace.manager.Manager;
 import dev.martim.marketplace.util.loader.ClassLoader;
 import lombok.RequiredArgsConstructor;
