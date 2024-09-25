@@ -11,6 +11,8 @@ public class MarketPlace extends JavaPlugin {
     public void onLoad() {
         super.onLoad();
 
+        saveDefaultConfig();
+
         Manager.handle(getLogger());
     }
 

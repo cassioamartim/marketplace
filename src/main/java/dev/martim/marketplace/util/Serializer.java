@@ -6,6 +6,7 @@ import net.minecraft.nbt.NBTReadLimiter;
 import net.minecraft.nbt.NBTTagCompound;
 import org.bukkit.craftbukkit.v1_20_R3.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,8 +35,14 @@ public class Serializer {
         NBTTagCompound compound = NBTCompressedStreamTools.a(input, NBTReadLimiter.a());
 
         // Converte o NBTTagCompound para ItemStack
-        net.minecraft.world.item.ItemStack deserialized = net.minecraft.world.item.ItemStack.a(compound);
+        net.minecraft.world.item.ItemStack nmsStack = net.minecraft.world.item.ItemStack.a(compound);
 
-        return CraftItemStack.asBukkitCopy(deserialized);
+        ItemStack stack = CraftItemStack.asBukkitCopy(nmsStack);
+
+        if (stack.getItemMeta() instanceof LeatherArmorMeta leatherMeta) {
+            System.out.println("Cor do item restaurada: " + leatherMeta.getColor());
+        }
+
+        return stack;
     }
 }

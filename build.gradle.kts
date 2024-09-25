@@ -20,6 +20,8 @@ dependencies {
     implementation("org.mongodb:mongodb-driver-sync:5.1.0")
     implementation("com.google.code.gson:gson:2.11.0")
 
+    implementation("org.javacord:javacord:3.8.0")
+
     compileOnly(files("lib/spigot-1.20.4-R0.1-SNAPSHOT.jar"))
 }
 

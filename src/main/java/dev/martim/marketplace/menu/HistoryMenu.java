@@ -18,7 +18,7 @@ public class HistoryMenu extends Menu {
     private final Account account;
 
     public HistoryMenu(Player player, Account account, Menu last) {
-        super(player, "Transaction History", last, 6, 21);
+        super(player, Manager.getMessage("transaction-title"), last, 6, 21);
 
         this.account = account;
     }
@@ -30,7 +30,7 @@ public class HistoryMenu extends Menu {
         List<TransactionItem> history = new ArrayList<>(account.getHistory());
 
         if (history.isEmpty())
-            addItem(22, Item.of(Material.BARRIER, "§cThere is no transaction history..."));
+            addItem(22, Item.of(Material.BARRIER, Manager.getMessage("no-history")));
         else {
             // Build Page
             buildPageItems(history, 10, (item, slot) -> {
@@ -39,12 +39,12 @@ public class HistoryMenu extends Menu {
                 Account seller = Manager.getAccountData().read(item.getSeller());
 
                 addItem(slot, Item.fromStack(item.deserialize())
-                        .name("§aTransaction #" + id)
-                        .lore("§7Sold by: §f" + (seller != null ? seller.getName() : "..."),
-                                "§7Carried out: §f" + DateUtil.getSimpleDate(item.getCreatedAt()),
+                        .name(Manager.getMessage("transaction-name", id))
+                        .lore(Manager.getMessage("transaction-sold-by", (seller != null ? seller.getName() : "...")),
+                                Manager.getMessage("transaction-carried-out", DateUtil.getSimpleDate(item.getCreatedAt())),
                                 "",
-                                "§7Price: §f" + Util.formatNumber(item.getPrice()),
-                                "§7Purchased in: §f" + item.getMarket().getName()
+                                Manager.getMessage("transaction-price", Util.formatNumber(item.getPrice())),
+                                Manager.getMessage("transaction-purchased-in", item.getMarket().getName())
                         ));
             });
         }

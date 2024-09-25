@@ -2,9 +2,7 @@ package dev.martim.marketplace.command;
 
 import dev.martim.marketplace.command.structure.CommandBuilder;
 import dev.martim.marketplace.manager.Manager;
-import dev.martim.marketplace.market.MarketType;
 import dev.martim.marketplace.market.items.MarketItem;
-import dev.martim.marketplace.menu.MarketMenu;
 import dev.martim.marketplace.util.Serializer;
 import dev.martim.marketplace.util.Util;
 import org.bukkit.Material;
@@ -27,19 +25,19 @@ public class SellCommand extends CommandBuilder {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            player.sendMessage("§cUsage: /" + label + " <price>.");
+            player.sendMessage(Manager.getMessage("sell-usage", label));
             return false;
         }
 
         if (!Util.isNumber(args[0])) {
-            player.sendMessage("§cOnly numbers is valid!");
+            player.sendMessage(Manager.getMessage("sell-only-number"));
             return false;
         }
 
         int price = Integer.parseInt(args[0]);
 
         if (price <= 0) {
-            player.sendMessage("§cThe price cannot be less than or equal to zero.");
+            player.sendMessage(Manager.getMessage("sell-price-cannot-zero"));
             return false;
         }
 
@@ -47,8 +45,8 @@ public class SellCommand extends CommandBuilder {
 
         System.out.println(hand.getType());
 
-        if (hand.getType().equals(Material.AIR)) {
-            player.sendMessage("§cYou can't sell an air.");
+        if (hand.getType() == Material.AIR) {
+            player.sendMessage(Manager.getMessage("sell-cant-air"));
             return false;
         }
 
@@ -57,7 +55,7 @@ public class SellCommand extends CommandBuilder {
         Manager.getMarketData().save(new MarketItem(player.getUniqueId(), data, price));
 
         player.getInventory().setItemInMainHand(null);
-        player.sendMessage("§aYou have put your item up for sale for " + Util.formatNumber(price) + "!");
+        player.sendMessage(Manager.getMessage("sell-put-up", Util.formatNumber(price)));
 
         return true;
     }

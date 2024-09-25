@@ -22,7 +22,7 @@ public class SetCoinsCommand extends CommandBuilder {
         Player player = (Player) sender;
 
         if (args.length <= 1) {
-            player.sendMessage("§cUsage: /" + label + " <target> <value>.");
+            player.sendMessage(Manager.getMessage("setcoins-usage", label));
             return false;
         }
 
@@ -34,7 +34,7 @@ public class SetCoinsCommand extends CommandBuilder {
         }
 
         if (!Util.isNumber(args[1])) {
-            player.sendMessage("§cOnly numbers is valid!");
+            player.sendMessage(Manager.getMessage("sell-only-numbers"));
             return false;
         }
 
@@ -42,7 +42,7 @@ public class SetCoinsCommand extends CommandBuilder {
 
         target.setCoins(coins);
 
-        player.sendMessage("§aYou set " + Util.formatNumber(coins) + " in account " + target.getName() + ".");
+        player.sendMessage(Manager.getMessage("setcoins-apply", Util.formatNumber(coins), target.getName()));
 
         return true;
     }

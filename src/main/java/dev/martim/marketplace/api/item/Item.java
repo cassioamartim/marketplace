@@ -76,18 +76,6 @@ public class Item extends ItemStack {
         return new Item(type).name(name).lore(lore);
     }
 
-    public Item clone() {
-        Item clone = new Item(getType(), getAmount(), getDurability());
-
-        if (this.hasItemMeta()) {
-            ItemMeta meta = this.getItemMeta().clone();
-
-            clone.setItemMeta(meta);
-        }
-
-        return clone;
-    }
-
     /* Object Methods */
     public String getName() {
         return getType().name();
@@ -106,14 +94,12 @@ public class Item extends ItemStack {
         Item item = new Item(stack.getType());
 
         item.setAmount(stack.getAmount());
-        item.setDurability(stack.getDurability());
+        //item.setDurability(stack.getDurability());
         item.setData(stack.getData());
 
         ItemMeta meta = stack.getItemMeta();
 
         if (meta != null) {
-            item.setItemMeta(meta);
-
             if (meta.hasEnchants()) {
                 for (Enchantment enchantment : meta.getEnchants().keySet()) {
                     try {
@@ -123,6 +109,8 @@ public class Item extends ItemStack {
                     }
                 }
             }
+
+            item.setItemMeta(meta);
         }
 
         return item;
@@ -130,10 +118,6 @@ public class Item extends ItemStack {
 
     public static boolean exists(ItemStack stack) {
         return itemList.stream().anyMatch(item -> item.isSimilar(stack));
-    }
-
-    public String typeName() {
-        return getType().name();
     }
 
     public Item click(ItemClick click) {
@@ -182,11 +166,6 @@ public class Item extends ItemStack {
 
     public Item amount(int amount) {
         setAmount(amount);
-        return this;
-    }
-
-    public Item durability(int durability) {
-        setDurability((short) durability);
         return this;
     }
 

@@ -41,84 +41,61 @@ public class MenuListener implements Listener {
         controller.remove(event.getPlayer().getUniqueId());
     }
 
-    @EventHandler(ignoreCancelled = true)
-    public void onPlayerClickItem(InventoryClickEvent event) {
-        if (event.getWhoClicked() instanceof Player player) {
-
-            if (controller.contains(player)) {
-                if (event.getClickedInventory() == null || event.getCurrentItem() == null) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                org.bukkit.inventory.Inventory clicked = event.getClickedInventory();
-
-                if (clicked.equals(player.getInventory())) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                Menu menu = controller.of(player.getUniqueId());
-
-                ClickType clickType = event.getClick();
-
-                ItemStack currentItem = event.getCurrentItem(), cursor = event.getCursor();
-
-                if ((clickType.equals(ClickType.RIGHT) && currentItem.getAmount() > 1) || clickType.equals(ClickType.NUMBER_KEY)
-                        || clickType.name().contains("DROP")) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                if (event.getRawSlot() > clicked.getSize()) {
-                    event.setCancelled(false);
-                    return;
-                }
-
-                if (menu.isProtectedSlot(event.getSlot())) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                if (clickType.name().startsWith("SHIFT") && !menu.isAllowShift()) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                if (cursor != null && !cursor.getType().equals(Material.AIR) && clickType.name().contains("RIGHT")) {
-                    event.setCancelled(true);
-                    return;
-                }
-
-                Item item = menu.getContents().get(event.getSlot());
-
-                if (item == null) return;
-
-                event.setCancelled(menu.isProtectedContent(event.getCurrentItem()) || !menu.isAllowClick());
-
-                if (!menu.isAllowClick())
-                    player.setItemOnCursor(null);
-
-                /* Rodando o clickType */
-                ItemClick itemClick = item.getClick();
-
-                if (itemClick != null) itemClick.runClick(event);
-            }
-        }
-    }
-
     @EventHandler
-    public void onDrag(InventoryDragEvent event) {
-        if (event.getWhoClicked() instanceof Player) {
-            InventoryView view = event.getView();
+    public void onPlayerClickItem(InventoryClickEvent event) {
+        if (event.getWhoClicked() instanceof Player player && controller.contains(player)) {
+            if (event.getClickedInventory() == null) {
+                event.setCancelled(true);
+                return;
+            }
 
-            Player player = (Player) view.getPlayer();
+            org.bukkit.inventory.Inventory clicked = event.getClickedInventory();
+
+            if (clicked.equals(player.getInventory())) {
+                event.setCancelled(true);
+                return;
+            }
 
             Menu menu = controller.of(player.getUniqueId());
 
-            if (menu == null) return;
+            ClickType clickType = event.getClick();
 
-            event.setCancelled(!menu.isAllowDrag());
+            ItemStack currentItem = event.getCurrentItem(), cursor = event.getCursor();
+
+            if ((clickType.equals(ClickType.RIGHT) && currentItem != null && currentItem.getAmount() > 1) || clickType.equals(ClickType.NUMBER_KEY)
+                    || clickType.name().contains("DROP")) {
+                event.setCancelled(true);
+                return;
+            }
+
+            if (event.getRawSlot() > clicked.getSize()) {
+                event.setCancelled(false);
+                return;
+            }
+
+            if (clickType.name().startsWith("SHIFT") && !menu.isAllowShift()) {
+                event.setCancelled(true);
+                return;
+            }
+
+            if (cursor != null && !cursor.getType().equals(Material.AIR) && clickType.name().contains("RIGHT")) {
+                event.setCancelled(true);
+                return;
+            }
+
+            Item item = menu.getContents().get(event.getSlot());
+
+            if (item == null) return;
+
+            event.setCancelled(menu.isProtectedContent(event.getCurrentItem()) || !menu.isAllowClick());
+
+            if (!menu.isAllowClick())
+                player.setItemOnCursor(null);
+
+            /* Rodando o clickType */
+            ItemClick itemClick = item.getClick();
+
+            if (itemClick != null) itemClick.runClick(event);
         }
     }
 
@@ -136,7 +113,7 @@ public class MenuListener implements Listener {
     public void onPlayerUseItem(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        ItemStack stack = player.getItemInHand();
+        ItemStack stack = player.getInventory().getItemInMainHand();
 
         if (stack.getType().equals(Material.AIR) || !stack.hasItemMeta()) return;
         if (!Item.exists(stack)) return;

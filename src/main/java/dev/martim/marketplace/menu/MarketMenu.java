@@ -37,7 +37,7 @@ public class MarketMenu extends Menu {
         List<MarketItem> list = new ArrayList<>(data.list());
 
         if (list.isEmpty())
-            addItem(22, Item.of(Material.BARRIER, "§cThere are no items on the market..."));
+            addItem(22, Item.of(Material.BARRIER, Manager.getMessage("no-market-items")));
         else {
             if (type.equals(MarketType.BLACK))
                 list.forEach(item -> item.setPrice(item.getPrice() / 2));
@@ -47,28 +47,16 @@ public class MarketMenu extends Menu {
                 Account author = Manager.getAccountData().read(item.getAuthor());
 
                 addItem(slot, Item.fromStack(item.deserialize())
-                        .name("§aItem #" + item.getId())
-                        .lore("§7Seller: §f" + (author != null ? author.getName() : "..."),
-                                "§7Price: §f" + Util.formatNumber(item.getPrice()),
+                        .name(Manager.getMessage("item-name", item.getId()))
+                        .lore(Manager.getMessage("item-seller", (author != null ? author.getName() : "...")),
+                                Manager.getMessage("item-price", Util.formatNumber(item.getPrice())),
                                 "",
-                                "§7Created in: §f" + DateUtil.getSimpleDate(item.getCreatedAt()),
+                                Manager.getMessage("item-created-in", DateUtil.getSimpleDate(item.getCreatedAt())),
                                 "",
-                                "§eClick to buy!")
+                                Manager.getMessage("item-click-to-buy"))
                         .click(event -> {
-
-                            if (account.getCoins() < item.getPrice()) {
-                                sound(MenuSound.ERROR);
-                                getPlayer().sendMessage("§cYou don't have enough coins!");
-                                return;
-                            }
-
-                            close();
-                            sound(MenuSound.SUCCESS);
-
-                            account.buy(item, type);
-                            data.remove(item);
-
-                            getPlayer().sendMessage("§aYou purchased a new item for " + Util.formatNumber(item.getPrice()) + ".");
+                            sound(MenuSound.PAGINATED);
+                            new ConfirmMarketMenu(getPlayer(), account, item, type, this).handle();
                         }));
             });
         }

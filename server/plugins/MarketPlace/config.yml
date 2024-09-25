@@ -1,0 +1,41 @@
+# Command Messages
+target-not-found: '&cTarget not found.'
+only-players-use-command: '&cOnly players can use this command.'
+
+# Sell Command
+sell-usage: '&cUsage: /%s <price>.'
+sell-only-numbers: '&cOnly numbers is valid!'
+sell-price-cannot-zero: '&cThe price cannot be less than or equal to zero.'
+sell-cant-air: '&cYou cant sell an air.'
+sell-put-up: '&aYou have put your item up for sale for &e%s&a coins!'
+
+# Set Coins Command
+setcoins-usage: '&cUsage: /%s <target> <value>.'
+setcoins-apply: '&aYou set %s coins in account %s.'
+
+# Inventory Messages
+
+# Market Menu
+no-market-items: '&cThere are no items on the market...'
+item-name: '&aItem #%s'
+item-seller: '&7Seller: &f%s'
+item-price: '&7Price: &f%s'
+item-created-in: '&7Created in: &f%s'
+item-click-to-buy: '&eClick to buy!'
+
+# Transaction Menu
+transaction-title: 'Transaction History'
+no-history: '&cThere is no transaction history...'
+transaction-name: '&aTransaction #%s'
+transaction-sold-by: '&7Sold by: &f%s'
+transaction-carried-out: '&7Carried out: &f%s'
+transaction-price: '&7Price: &f%s'
+transaction-purchased-in: '&7Purchased in: &f%s'
+
+# Confirm Market Menu
+confirm-market-title: 'Confirm Purchase'
+cancel-button: '&cCancel'
+confirm-button: '&aConfirm'
+not-enough-coins: '&cYou dont have enough coins!'
+item-purchased-black-market: '&aYour item was purchased on the Black Market! You received double the coins!'
+item-purchased: '&aYou purchased a new item for &e%s&a coins!'

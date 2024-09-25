@@ -2,13 +2,16 @@ package dev.martim.marketplace.manager;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import dev.martim.marketplace.MarketPlace;
 import dev.martim.marketplace.backend.data.AccountData;
 import dev.martim.marketplace.backend.data.MarketData;
 import dev.martim.marketplace.backend.database.mongodb.MongoDatabase;
 import dev.martim.marketplace.controller.list.AccountController;
 import dev.martim.marketplace.controller.list.MenuController;
+import dev.martim.marketplace.discord.Discord;
 import lombok.Getter;
 import lombok.Setter;
+import org.bukkit.ChatColor;
 
 import java.util.logging.Logger;
 
@@ -17,6 +20,10 @@ public class Manager {
     @Getter
     @Setter
     private static Logger logger;
+
+    @Getter
+    @Setter
+    private static Discord discord;
 
     @Getter
     @Setter
@@ -50,10 +57,27 @@ public class Manager {
 
         setAccountData(new AccountData(mongoDatabase));
         setMarketData(new MarketData(mongoDatabase));
+
+        setDiscord(new Discord());
     }
 
     public static void unload() {
         if (mongoDB != null)
             mongoDB.unload();
+
+        if (discord != null)
+            discord.disconnect();
+    }
+
+    public static String getMessage(String field, Object... args) {
+        String message = MarketPlace.getPlugin(MarketPlace.class).getConfig().getString(field);
+
+        if (message != null) {
+            message = String.format(message, args);
+
+            return ChatColor.translateAlternateColorCodes('&', message);
+        }
+
+        return "§cAn error occurred while loading!";
     }
 }
